@@ -1,7 +1,7 @@
-package it.dbasheer.todoapp.data.room
+package it.basheer.todoapp.data.room
 
 import androidx.room.*
-import it.dbasheer.todoapp.data.model.TaskModel
+import it.basheer.todoapp.data.model.TaskModel
 
 @Dao
 interface TaskDao {

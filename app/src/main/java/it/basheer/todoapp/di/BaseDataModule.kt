@@ -1,18 +1,32 @@
-package it.dbasheer.todoapp.di
+package it.basheer.todoapp.di
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import it.dbasheer.todoapp.data.db.AppDatabase
-import it.dbasheer.todoapp.utils.DATABASE_NAME
+import it.basheer.todoapp.baseApp.BaseApp
+import it.basheer.todoapp.data.db.AppDatabase
+import it.basheer.todoapp.utils.AppSharedPref
+import it.basheer.todoapp.utils.DATABASE_NAME
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object BaseDataModule {
+
+    @Provides
+    fun provideContext(application: BaseApp): Context {
+        return application.applicationContext
+    }
+
+    @Provides
+    fun provideApplication(@ApplicationContext app: Context): BaseApp {
+        return app as BaseApp
+    }
 
     @Provides
     @Singleton
@@ -35,4 +49,8 @@ object BaseDataModule {
     @Singleton
     fun provideTaskLogDao(appDatabase: AppDatabase) = appDatabase.taskLogDao
 
+    @Provides
+    @Singleton
+    fun provideAppSharedPref(application: Application): AppSharedPref =
+        AppSharedPref(application.applicationContext)
 }

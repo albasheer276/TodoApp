@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'it.dbasheer.todoapp'
+    namespace 'it.basheer.todoapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "it.dbasheer.todoapp"
+        applicationId "it.basheer.todoapp"
         minSdk 21
         targetSdk 33
         versionCode 1
@@ -48,8 +48,15 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
+    // Coroutine Lifecycle Scopes
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
+
+    // livedata extension
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.5.1"
+
     // dagger hilt
     implementation "com.google.dagger:hilt-android:2.44"
+    kapt "com.google.dagger:hilt-android-compiler:2.44"
     kapt "com.google.dagger:hilt-android-compiler:2.44"
 
     // room

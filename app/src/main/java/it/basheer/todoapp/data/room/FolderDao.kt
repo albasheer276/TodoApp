@@ -1,4 +1,4 @@
-package it.dbasheer.todoapp.data.room
+package it.basheer.todoapp.data.room
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import it.dbasheer.todoapp.data.model.FolderModel
+import it.basheer.todoapp.data.model.FolderModel
 
 @Dao
 interface FolderDao {

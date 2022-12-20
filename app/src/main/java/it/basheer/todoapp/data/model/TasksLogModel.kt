@@ -1,10 +1,10 @@
-package it.dbasheer.todoapp.data.model
+package it.basheer.todoapp.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import it.dbasheer.todoapp.utils.DateUtils.getCurrentDateTimeInMillis
+import it.basheer.todoapp.utils.DateUtils.getCurrentDateTimeInMillis
 
 @Entity(
     tableName = "tasks_log",

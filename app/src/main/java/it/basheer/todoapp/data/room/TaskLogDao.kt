@@ -1,10 +1,10 @@
-package it.dbasheer.todoapp.data.room
+package it.basheer.todoapp.data.room
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import it.dbasheer.todoapp.data.model.TasksLogModel
+import it.basheer.todoapp.data.model.TasksLogModel
 
 @Dao
 interface TaskLogDao {

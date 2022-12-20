@@ -1,4 +1,4 @@
-package it.dbasheer.todoapp
+package it.basheer.todoapp
 
 import org.junit.Test
 
