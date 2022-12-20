@@ -9,5 +9,6 @@ import androidx.room.PrimaryKey
 data class FolderModel(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val name: String,
+    @ColumnInfo(name = "order_num")  val orderNum: Int,
     @ColumnInfo(name = "color_theme") val colorTheme: Int? = null
 )

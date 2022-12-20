@@ -17,7 +17,7 @@ import it.dbasheer.todoapp.utils.DateUtils.getCurrentDateTimeInMillis
 )
 data class TasksLogModel(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = "task_id") val taskId: Long,
+    @ColumnInfo(name = "task_id", index = true) val taskId: Long,
     @ColumnInfo(name = "from_status") val fromStatus: Int,
     @ColumnInfo(name = "to_status") val toStatus: Int,
     val date: Long = getCurrentDateTimeInMillis()
