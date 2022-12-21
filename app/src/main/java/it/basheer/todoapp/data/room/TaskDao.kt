@@ -17,7 +17,7 @@ interface TaskDao {
                 "case :orderType when('date') then created_data end DESC, " +
                 "case :orderType when('title') then title end ASC"
     )
-    suspend fun getTasks(orderType: String = "date"): List<TaskModel>
+    suspend fun getTasks(orderType: String): List<TaskModel>
 
     /**
      * orderType => date, title
@@ -27,7 +27,7 @@ interface TaskDao {
                 "case :orderType when('date') then created_data end DESC, " +
                 "case :orderType when('title') then title end ASC"
     )
-    suspend fun getTasksByFolder(folderId: Long, orderType: String = "date"): List<TaskModel>
+    suspend fun getTasksByFolder(folderId: Long, orderType: String): List<TaskModel>
 
     /**
      * should add '%tagId%'
@@ -37,7 +37,7 @@ interface TaskDao {
                 "case :orderType when('date') then created_data end DESC, " +
                 "case :orderType when('title') then title end ASC"
     )
-    suspend fun getTasksByTag(tagId: Long, orderType: String = "date"): List<TaskModel>
+    suspend fun getTasksByTag(tagId: Long, orderType: String): List<TaskModel>
 
     @Delete
     suspend fun deleteTask(taskModel: TaskModel)

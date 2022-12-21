@@ -30,7 +30,10 @@ data class TaskModel(
     var description: String? = null,
     var status: Int = 0, // 0 => backLog, 1 => to do, 2 => in progress, 3 => completed, 4 => waiting, 5 => canceled
     @ColumnInfo(name = "created_data") var createdData: Long = getCurrentDateTimeInMillis(),
-){
-    @Ignore var folder: FolderModel? = null
-    @Ignore var tags: List<TagModel>? = null
+) {
+    @Ignore
+    var folder: FolderModel? = null
+
+    @Ignore
+    var tags: List<TagModel>? = null
 }
